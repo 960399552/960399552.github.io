@@ -18,36 +18,36 @@
     <br>
     <br>
 
-    <div class="container">
-        <form action="result.html" method="link">
+    <div class="container" >
+        <form method="get" onsubmit="return validatePasswords(this);" action="result.html">
             <header><u>personal information</u></header>
             <br>
             first name<span style="color: red; ">*</span>&nbsp
-            <input id="firstname" class="col-sm-4-4" type="text" maxlength="40"  name="firstname">
+            <input name="firstname" class="col-sm-4-4" type="text" maxlength="40"  name="firstname">
             last name<span style="color: red; ">*</span>&nbsp
-            <input id=s"lastname" class="col-sm-4-4" type="text" maxlength="40">
+            <input name=s"lastname" class="col-sm-4-4" type="text" maxlength="40">
             <br><br>
             address<span style="color: red; ">*</span>&nbsp&nbsp&nbsp&nbsp
-            <input id="address" class="col-sm-5" type="text" maxlength="40">
+            <input name="address" class="col-sm-5" type="text" maxlength="40">
             <br><br>
             city<span style="color: red; ">*</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            <input id="city" class="col-sm-3" type="text" maxlength="40">
+            <input name="city" class="col-sm-3" type="text" maxlength="40">
             &nbsp&nbsp&nbsp&nbspstate<span style="color: red; ">*</span>&nbsp&nbsp&nbsp&nbsp
-            <input id="state" class="col-sm-2" type="text" maxlength="40">
+            <input name="state" class="col-sm-2" type="text" maxlength="40">
             <br><br>
             country<span style="color: red; ">*</span>&nbsp&nbsp&nbsp&nbsp
-            <input id="country" class="col-sm-3" type="text" maxlength="40">
+            <input name="country" class="col-sm-3" type="text" maxlength="40">
             &nbsp&nbsp&nbsp&nbspzip<span style="color: red; ">*</span>&nbsp&nbsp&nbsp&nbsp
             <input id="zip" class="col-sm-2" type="text" maxlength="5">
             <br><br>
             phone<span style="color: red;">*</span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            <input id="phone" class="col-auto" type="tel" maxlength="10">
+            <input name="phone" class="col-auto" type="tel" maxlength="10">
             <br><br>
             e-mail&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-            <input id="email" class="col-auto" type="mail" maxlength="40">
+            <input name="email" class="col-auto" type="mail" maxlength="40">
             <br><br>
             confirm e-mail&nbsp
-            <input id="cemail" class="col-auto" type="mail" maxlength="40">
+            <input name="cemail" class="col-auto" type="mail" maxlength="40">
             <br><br>
             <header><u>education information</u></header>
             <br>
@@ -63,7 +63,7 @@
             <br>
                 <input class="col-auto" type="radio" name="EDLevel">less than $50k&nbsp
                 <input class="col-auto" type="radio" name="EDLevel">between $50-100k&nbsp
-                <input class="col-auto" type="radio" name="EDLevel">above $100k&nbsp
+                <input class="col-asuto" type="radio" name="EDLevel">above $100k&nbsp
             <br><br>
             <header><u>terms and certification</u></header>
             <br>
@@ -77,6 +77,16 @@
     </div>
 
 
+    <script>
+        function validatePasswords(form) {
+            if (form.email.value !== form.cemail.value) {
+                alert("Passwords do not match");
+                return false;
+            }
+            return true;
+        }
+
+    </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWgxnvu0xDnebjzjrGxKe6ileVSJ3qaO4&callback=initMap" async defer></script>
 
     <script src='https://www.google.com/recaptcha/api.js'></script>
